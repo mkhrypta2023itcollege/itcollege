@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна робота №8 — SCSS для адаптивних стилів</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,regular,italic|Roboto+Condensed:regular,700|Roboto+Slab:600&amp;subset=cyrillic,cyrillic-ext">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="fontyourface path-frontpage has-glyphicons lang-uk">
+  <!-- Варіант 2 лабораторної №7: header#hero_container, зверстаний за допомогою Flexbox -->
+  <header aria-label="Hero Image" id="hero_container" role="link">
+    <div class="region region-hero">
+      <section class="views-element-container block block-views block-views-blockfront-page-news-block-1 clearfix" id="block-views-block-front-page-news-block-1">
+        <div class="form-group">
+          <div class="view view-front-page-news view-id-front_page_news view-display-id-block_1">
+            <div class="view-content">
+              <div id="hero" style="background: rgb(46,49,146) url(images/hero.jpg) no-repeat center top;">
+                <div class="shadow"></div>
+                <div class="container">
+                  <h2>
+                    <a href="https://lpnu.ua/news/u-lvivskii-politekhnitsi-prezentuvaly-proiekt-mapa-khabiv-talantiv-ukrainy" hreflang="uk">
+                      У Львівській політехніці презентували проєкт «Мапа хабів талантів України»
+                    </a>
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block block-block-content block-block-contentc5f23b7f-4a73-4e3e-9f21-5b14c3a485f4 clearfix" id="block-lpnushortcutstop4">
+        <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+          <div class="container-fluid">
+            <div class="row shortcuts-row">
+              <a class="shortcut-link" href="https://lpnu.ua/pidhotovchi-kursy">
+                <div class="shortcut-1 col-xs-6 col-sm-3">
+                  <h2><i class="fas fa-info-circle"></i> <span>Підготовчі курси</span></h2>
+                </div>
+              </a>
+              <a class="shortcut-link" href="https://lpnu.ua/reflections">
+                <div class="shortcut-2 col-xs-6 col-sm-3">
+                  <h2><i class="fas fa-university"></i> <span>З ректорського столу</span></h2>
+                </div>
+              </a>
+              <a class="shortcut-link" href="https://lpnu.ua/politekhniky-dlia-peremohy">
+                <div class="shortcut-3 col-xs-6 col-sm-3">
+                  <h2><i class="fas fa-handshake"></i> <span>Політехніки - для перемоги</span></h2>
+                </div>
+              </a>
+              <a class="shortcut-link" href="https://lpnu.ua/knyha-pamiati">
+                <div class="shortcut-4 col-xs-6 col-sm-3">
+                  <h2><i class="fas fa-users"></i> <span>Книга пам'яті</span></h2>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <!-- Головний блок із сіткою новин (CSS Grid) -->
+  <main class="main-container container">
+    <section class="views-element-container block block-views block-views-blockfront-page-news-block-3 clearfix" id="block-views-block-front-page-news-block-3">
+      <div class="form-group">
+        <div class="view view-front-page-news view-id-front_page_news view-display-id-block_3">
+          <div class="view-header">
+            <h2 align="center">
+              <span><a href="https://lpnu.ua/news">Новини університету</a></span>
+            </h2>
+          </div>
+          <div class="view-content">
+            <div class="views-view-grid horizontal cols-4 clearfix news-grid">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-3 views-col col-1">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/news/kredyt-na-piv-miliona-iak-u-lvivskii-politekhnitsi-provely-esg-finance-day">
+                <div class="news_teaser">
+                  <img alt="заставка до матеріалу" class="img-responsive" height="405" src="images/news-01.jpg" typeof="Image" width="720">
+                  <span>25 листоп. 2026, 17:05</span>
+                </div>
+                <h3>Кредит на пів мільйона: як у Львівській політехніці провели ESG Finance Day</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 views-col col-2">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/news/u-lvivskii-politekhnitsi-prezentuvaly-prohramu-pidhotovky-vykladachiv-train-trainer-vid">
+                <div class="news_teaser">
+                  <img alt="заставка до матеріалу" class="img-responsive" height="405" src="images/news-02.jpg" typeof="Image" width="720">
+                  <span>25 листоп. 2026, 15:52</span>
+                </div>
+                <h3>У Львівській політехніці презентували програму підготовки викладачів Train-the-Trainer від фінських партнерів</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 views-col col-3">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/news/stalyi-rozvytok-akademichna-spivpratsia-ta-mizhkulturnyi-dialoh-lvivska-politekhnika-na">
+                <div class="news_teaser">
+                  <img alt="заставка до матеріалу" class="img-responsive" height="405" src="images/news-03.jpg" typeof="Image" width="720">
+                  <span>25 листоп. 2026, 14:58</span>
+                </div>
+                <h3>Сталий розвиток, академічна співпраця та міжкультурний діалог: Львівська політехніка на осінній школі в Італії»</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 views-col col-4">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/news/studenty-lvivskoi-politekhniky-staly-peremozhtsiamy-ta-pryzeramy-mizhnarodnykh-zmahan-z">
+                <div class="news_teaser">
+                  <img alt="заставка до матеріалу" class="img-responsive" height="405" src="images/news-04.jpg" typeof="Image" width="720">
+                  <span>25 листоп. 2026, 14:02</span>
+                </div>
+                <h3>Студенти Львівської політехніки стали переможцями та призерами міжнародних змагань з кібербезпеки CTF у Кишиневі</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-3 views-col col-1">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/events/vshanuvannia-pamiati-zhertv-holodomoru-henotsydu-ta-zahyblykh-v-ukrainsko-rosiiskii-viini">
+                <div class="news_teaser">
+                  <img alt="заставка до матеріалу" class="img-responsive" height="405" src="images/news-05.png" typeof="Image" width="720">
+                  <span>25 листоп. 2026, 12:17</span>
+                </div>
+                <h3>Вшанування пам’яті жертв Голодомору-геноциду та загиблих в українсько-російській війні, презентація виставки «Голод» Юлії Федорович (Канада)</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 views-col col-2">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/news/stiv-dzhardinh-u-lvivskii-politekhnitsi-pro-sylu-komunikatsii-vidpovidalne-liderstvo-ta">
+                <div class="news_teaser">
+                  <img alt="заставка до матеріалу" class="img-responsive" height="405" src="images/news-06.jpg" typeof="Image" width="720">
+                  <span>25 листоп. 2026, 10:56</span>
+                </div>
+                <h3>Стів Джардінг у Львівській політехніці: про силу комунікації, відповідальне лідерство та мистецтво впливу</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 views-col col-3">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/news/studenty-ikhkht-vyboroly-pershe-mistse-na-vseukrainskomu-khakatoni-greenchem-hackathon-2026">
+                <div class="news_teaser">
+                  <img alt="заставка до матеріалу" class="img-responsive" height="405" src="images/news-07.jpg" typeof="Image" width="720">
+                  <span>25 листоп. 2026, 10:20</span>
+                </div>
+                <h3>Студенти ІХХТ вибороли перше місце на всеукраїнському хакатоні GreenChem Hackathon 2026</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 views-col col-4">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/news/dyrektor-ntb-lvivskoi-politekhniky-andrii-andrukhiv-nasha-biblioteka-sama-stvoriuie-tsyfrovi">
+                <div class="news_teaser">
+                  <img alt="заставка до матеріалу" class="img-responsive" height="405" src="images/news-08.jpg" typeof="Image" width="720">
+                  <span>25 листоп. 2026, 09:43</span>
+                </div>
+                <h3>Директор НТБ Львівської політехніки Андрій Андрухів: «Наша бібліотека сама створює цифрові рішення»</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-3 views-col col-1">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/news/yarmarok-kariery-2026-pidsumky-vrazhennia-ta-novi-mozhlyvosti">
+                <div class="news_teaser">
+                  <img alt="фото" class="img-responsive" height="405" src="images/news-09.jpg" typeof="Image" width="720">
+                  <span>24 листоп. 2026, 15:18</span>
+                </div>
+                <h3>Ярмарок кар’єри 2026: підсумки, враження та нові можливості</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 views-col col-2">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/news/u-lvivskii-politekhnitsi-vidbudetsia-mizhnarodnyi-naukovo-praktychnyi-seminar-do-170-richchia">
+                <div class="news_teaser">
+                  <img alt="заставка до матеріалу" class="img-responsive" height="405" src="images/news-10.jpg" typeof="Image" width="720">
+                  <span>24 листоп. 2026, 15:02</span>
+                </div>
+                <h3>У Львівській політехніці відбудеться міжнародний науково-практичний семінар до 170-річчя від дня народження Софії Русової</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 views-col col-3">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/news/profesortsi-nadii-zelinskii-vrucheno-vidznaku-mykhailo-hrushevskyi-nauka-i-zhurnalistyka">
+                <div class="news_teaser">
+                  <img alt="заставка до матеріалу" class="img-responsive" height="405" src="images/news-11.jpg" typeof="Image" width="720">
+                  <span>24 листоп. 2026, 13:45</span>
+                </div>
+                <h3>Професорці Надії Зелінській вручено відзнаку «Михайло Грушевський. Наука і журналістика»</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 views-col col-4">
+          <div>
+            <span>
+              <a href="https://lpnu.ua/news/uspishna-vypusknytsia-kafedry-oa-liubov-danyliv-pro-hroshi-mify-ta-realne-maibutnie-profesii">
+                <div class="news_teaser">
+                  <img alt="заставка до матеріалу" class="img-responsive" height="405" src="images/news-12.jpg" typeof="Image" width="720">
+                  <span>24 листоп. 2026, 12:01</span>
+                </div>
+                <h3>Успішна випускниця кафедри ОА Любов Данилів про гроші, міфи та реальне майбутнє професії</h3>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

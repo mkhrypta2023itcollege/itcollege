@@ -1,0 +1,17 @@
+// ==========================================================================
+// Міксини лабораторної роботи №8
+// ==========================================================================
+
+@use 'sass:map';
+@use 'variables' as v;
+
+// Медіа-запит за ім'ям брейкпоінту з мапи $breakpoints.
+// У прикладі з інструкції використано глобальні map-has-key()/map-get();
+// тут застосовано сучасний модуль sass:map (map.has-key()/map.get()).
+@mixin respond-to($breakpoint) {
+  @if map.has-key(v.$breakpoints, $breakpoint) {
+    @media (min-width: map.get(v.$breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}

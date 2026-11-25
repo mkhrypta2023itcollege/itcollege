@@ -1,0 +1,368 @@
+/* ==========================================================================
+   Лабораторна робота №5, варіант 1
+   Стилі скопійовані з головної сторінки https://lpnu.ua/
+   для блоку header#hero_container та його нащадків.
+   Джерела: Bootstrap 3.4.1, Drupal Bootstrap, тема lpnu.ua
+   ========================================================================== */
+
+/* --- База: блочна модель, шрифти й кольори (як у DevTools → Computed) --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px, як на lpnu.ua */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+.fontyourface {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: #0076A8;
+  text-decoration: none;
+  transition: color 0.5s ease-out;
+}
+
+a:hover,
+a:active {
+  color: #00A1E4;
+  text-decoration: none;
+  transition: color 0.5s ease-out;
+}
+
+h2 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  margin: 20px 0 10px;
+  font-size: 30px;
+}
+
+/* --- Сітка Bootstrap 3, яка використана всередині header --- */
+.container,
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container::before,
+.container::after,
+.container-fluid::before,
+.container-fluid::after,
+.clearfix::before,
+.clearfix::after,
+.row::before,
+.row::after {
+  display: table;
+  content: " ";
+}
+
+.container::after,
+.container-fluid::after,
+.clearfix::after,
+.row::after {
+  clear: both;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+[class*="col-xs-"],
+[class*="col-sm-"] {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-xs-6,
+.col-sm-3 {
+  float: left;
+}
+
+.col-xs-6 {
+  width: 50%;
+}
+
+/* ==========================================================================
+   header#hero_container
+   ========================================================================== */
+#hero_container {
+  display: block;
+}
+
+#hero {
+  position: relative;
+  width: 100% !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  min-height: 200px;
+  background-color: rgb(46, 49, 146);
+}
+
+#hero .container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 120px;
+  background: linear-gradient(to bottom, rgba(46, 49, 146, 0), rgba(46, 49, 146, 1));
+}
+
+#hero h2 {
+  text-align: center;
+  margin: 0 0 24px;
+  font-size: 22px;
+}
+
+#hero a:link,
+#hero a:visited {
+  color: #fff;
+  text-decoration: none;
+  transition: color 3s ease-out;
+}
+
+#hero a:hover,
+#hero a:active {
+  color: #00A1E4;
+  text-decoration: none;
+  transition: color 3s ease-out;
+}
+
+/* ==========================================================================
+   Блок швидких посилань #block-lpnushortcutstop4
+   ========================================================================== */
+#block-lpnushortcutstop4 {
+  background: rgb(46, 49, 146);
+}
+
+#block-lpnushortcutstop4::before {
+  display: block;
+  width: 100%;
+  height: 2px;
+  content: "";
+  background-image: linear-gradient(to right, #2E3192 0%, #fff 50%, #2E3192 100%);
+}
+
+#block-lpnushortcutstop4 .col-xs-6 {
+  position: relative;
+  min-height: 104px;
+}
+
+#block-lpnushortcutstop4 h2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 15px;
+}
+
+#block-lpnushortcutstop4 h2 svg,
+#block-lpnushortcutstop4 h2 i {
+  color: #00A1E4;
+  margin-right: 0.5rem;
+}
+
+.shortcut-1,
+.shortcut-4 {
+  background: #252775;
+}
+
+#block-lpnushortcutstop4 a:link,
+#block-lpnushortcutstop4 a:visited {
+  color: #fff;
+  text-decoration: none;
+  transition: color 3s ease-out;
+}
+
+#block-lpnushortcutstop4 a:hover,
+#block-lpnushortcutstop4 a:active {
+  color: #00A1E4;
+  text-decoration: none;
+  transition: color 3s ease-out;
+}
+
+/* ==========================================================================
+   Адаптивні стани (медіазапити сайту lpnu.ua)
+   ========================================================================== */
+@media only screen and (min-width: 480px) {
+  #hero {
+    min-height: 300px;
+  }
+
+  .shadow {
+    min-height: 160px;
+  }
+
+  #hero h2 {
+    margin: 0 0 30px;
+    font-size: 34px;
+  }
+
+  #block-lpnushortcutstop4 .col-xs-6 {
+    min-height: 106px;
+  }
+
+  #block-lpnushortcutstop4 h2 {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* На сайті над hero є navbar висотою 55px — компенсуємо його відсутність */
+  body {
+    padding-top: 55px;
+  }
+
+  .container {
+    width: 750px;
+  }
+
+  .col-sm-3 {
+    width: 25%;
+  }
+
+  #hero {
+    min-height: 400px;
+    margin-top: -55px;
+    border-top: 1px solid rgb(46, 49, 146);
+  }
+
+  .shadow {
+    min-height: 215px;
+  }
+
+  #hero h2 {
+    font-size: 40px;
+    margin: 0 0 30px;
+  }
+
+  #block-lpnushortcutstop4 .col-xs-6 {
+    min-height: 110px;
+  }
+
+  #block-lpnushortcutstop4 h2 {
+    font-size: 15px;
+  }
+
+  .shortcut-1,
+  .shortcut-3 {
+    background: none;
+  }
+
+  .shortcut-2,
+  .shortcut-4 {
+    background: #252775;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+
+  #hero {
+    min-height: 500px;
+  }
+
+  .shadow {
+    min-height: 270px;
+  }
+
+  #hero h2 {
+    margin: 0 0 40px;
+  }
+
+  #block-lpnushortcutstop4 .col-xs-6 {
+    min-height: 124px;
+  }
+
+  #block-lpnushortcutstop4 h2 {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+
+  #hero {
+    min-height: 550px;
+  }
+
+  .shadow {
+    min-height: 295px;
+  }
+
+  #hero h2 {
+    font-size: 50px;
+    margin: 0 0 50px;
+  }
+
+  #block-lpnushortcutstop4 .col-xs-6 {
+    min-height: 134px;
+  }
+
+  #block-lpnushortcutstop4 h2 {
+    font-size: 21px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  #hero {
+    min-height: 650px;
+  }
+
+  .shadow {
+    min-height: 350px;
+  }
+
+  #hero h2 {
+    margin: 0 0 65px;
+  }
+
+  #block-lpnushortcutstop4 .col-xs-6 {
+    min-height: 120px;
+  }
+
+  #block-lpnushortcutstop4 h2 {
+    font-size: 22px;
+  }
+}

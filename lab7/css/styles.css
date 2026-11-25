@@ -1,0 +1,421 @@
+/* ==========================================================================
+   Лабораторна робота №7 — варіант 2
+   Flexbox (header#hero_container) + CSS Grid (Новини університету)
+   transitions, animations та адаптивність: 768px / 1024px
+
+   Вигляд блоку новин відтворено за стилями сайту lpnu.ua:
+   сіра підкладка #f6f6f6, сірий тег дати #757575, сині заголовки #0076A8.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+.fontyourface {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+a {
+  color: #0076A8;
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+}
+
+a:hover,
+a:focus {
+  color: #00A1E4;
+}
+
+h2,
+h3 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+.container,
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+/* ==========================================================================
+   1. header#hero_container — FLEXBOX
+   ========================================================================== */
+#hero_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.region-hero {
+  display: flex;
+  flex-direction: column;
+}
+
+#hero {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 200px;
+  background-color: rgb(46, 49, 146);
+  background-position: center top !important;
+  background-size: cover !important;
+  overflow: hidden;
+}
+
+.shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 120px;
+  background: linear-gradient(to bottom, rgba(46, 49, 146, 0), rgba(46, 49, 146, 1));
+  pointer-events: none;
+}
+
+#hero .container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: auto;
+}
+
+#hero h2 {
+  max-width: 900px;
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 22px;
+}
+
+#hero a {
+  display: inline-block;
+  color: #fff;
+  transition: color 0.4s ease-out, text-shadow 0.4s ease-out;
+}
+
+#hero a:hover,
+#hero a:focus {
+  color: #00A1E4;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+#block-lpnushortcutstop4 {
+  display: flex;
+  flex-direction: column;
+  background: rgb(46, 49, 146);
+}
+
+#block-lpnushortcutstop4::before {
+  display: block;
+  width: 100%;
+  height: 2px;
+  content: "";
+  background-image: linear-gradient(to right, #2E3192 0%, #fff 50%, #2E3192 100%);
+}
+
+#block-lpnushortcutstop4 .field {
+  flex: 1 1 auto;
+}
+
+.shortcuts-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shortcut-link {
+  display: flex;
+  flex: 0 0 50%;
+  color: #fff;
+}
+
+.shortcut-link > div {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 104px;
+  padding: 12px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.shortcut-link h2 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  text-align: center;
+  font-size: 15px;
+}
+
+.shortcut-link h2 i {
+  color: #00A1E4;
+}
+
+.shortcut-1,
+.shortcut-4 {
+  background: #252775;
+}
+
+.shortcut-link:hover > div {
+  background: #00A1E4;
+}
+
+.shortcut-link:hover h2,
+.shortcut-link:hover h2 i {
+  color: #fff;
+}
+
+/* ==========================================================================
+   2. main — ГРІД НОВИН (стиль як на lpnu.ua)
+   ========================================================================== */
+.main-container {
+  max-width: 940px;
+  padding: 0 15px 60px;
+  margin: 0 auto;
+}
+
+.view-header h2 {
+  margin: 30px 0;
+  text-align: center;
+  font-family: "Roboto Condensed", "Roboto", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.view-header h2 a {
+  color: #0076A8;
+  border-bottom: 2px solid #0076A8;
+  transition: color 2s ease-out, border-color 2s ease-out;
+}
+
+.view-header h2 a:hover,
+.view-header h2 a:active {
+  color: #00A1E4;
+  border-bottom-color: #00A1E4;
+}
+
+/* Mobile: 1 колонка */
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Початкова розмітка lpnu.ua має row-обгортки — робимо їх «прозорими» для grid */
+.news-grid .row {
+  display: contents;
+}
+
+.news-grid .views-col {
+  min-width: 0;
+  animation: fadeInUp 0.5s ease both;
+}
+
+.news-grid .views-col > div,
+.news-grid .views-col > div > span {
+  display: block;
+}
+
+/* Сіра підкладка картки новини, як на сайті */
+.news-grid .views-col > div {
+  background: #f6f6f6;
+}
+
+.news-grid .views-col a {
+  display: block;
+  color: #0076A8;
+}
+
+.news_teaser {
+  color: #444444;
+}
+
+/* Зображення з сірою лінією внизу; дата перекриває його край */
+.news-grid .news_teaser img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: -12px;
+  border-bottom: 2px solid #757575;
+  opacity: 1;
+  transition: opacity 2s ease-out;
+}
+
+.news-grid .news_teaser span {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin-left: 15px;
+  padding: 5px 7px;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: #757575;
+}
+
+.news-grid h3 {
+  margin: 15px 0 30px;
+  padding: 0 15px 15px;
+  color: #0076A8;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 21px;
+  transition: color 0.3s ease-out;
+}
+
+/* Hover: зображення стає напівпрозорим, як на оригіналі */
+.news-grid a:hover img,
+.news-grid a:focus img {
+  opacity: 0.65;
+}
+
+.news-grid a:hover h3,
+.news-grid a:focus h3 {
+  color: #00A1E4;
+}
+
+/* Анімація появи карток із затримкою */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.news-grid .views-col:nth-child(2) { animation-delay: 0.05s; }
+.news-grid .views-col:nth-child(3) { animation-delay: 0.10s; }
+.news-grid .views-col:nth-child(4) { animation-delay: 0.15s; }
+.news-grid .views-col:nth-child(5) { animation-delay: 0.20s; }
+.news-grid .views-col:nth-child(6) { animation-delay: 0.25s; }
+.news-grid .views-col:nth-child(7) { animation-delay: 0.30s; }
+.news-grid .views-col:nth-child(8) { animation-delay: 0.35s; }
+.news-grid .views-col:nth-child(9) { animation-delay: 0.40s; }
+.news-grid .views-col:nth-child(10) { animation-delay: 0.45s; }
+.news-grid .views-col:nth-child(11) { animation-delay: 0.50s; }
+.news-grid .views-col:nth-child(12) { animation-delay: 0.55s; }
+
+/* ==========================================================================
+   3. Медіа-запити (3 брейкпоінти)
+   ========================================================================== */
+
+/* Tablet: 768px – 1023px → 2 колонки новин, 4 швидкі посилання в ряд */
+@media (min-width: 768px) {
+  body {
+    padding-top: 55px; /* компенсація відсутнього navbar lpnu.ua */
+  }
+
+  .container {
+    max-width: 750px;
+  }
+
+  #hero {
+    min-height: 400px;
+  }
+
+  .shadow {
+    min-height: 215px;
+  }
+
+  #hero h2 {
+    font-size: 40px;
+  }
+
+  .shortcut-link {
+    flex-basis: 25%;
+  }
+
+  .shortcut-link > div {
+    min-height: 110px;
+  }
+
+  .shortcut-link h2 {
+    font-size: 15px;
+  }
+
+  .shortcut-1,
+  .shortcut-3 {
+    background: none;
+  }
+
+  .shortcut-2,
+  .shortcut-4 {
+    background: #252775;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 1024px і більше → 4 колонки новин */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 970px;
+  }
+
+  #hero {
+    min-height: 500px;
+  }
+
+  .shadow {
+    min-height: 270px;
+  }
+
+  #hero h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  .shortcut-link > div {
+    min-height: 124px;
+  }
+
+  .shortcut-link h2 {
+    font-size: 18px;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

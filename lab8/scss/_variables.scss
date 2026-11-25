@@ -1,0 +1,34 @@
+// ==========================================================================
+// Змінні лабораторної роботи №8
+// Кольори, розміри шрифтів і брейкпоінти винесені окремо для повторного
+// використання та легкої зміни теми сайту.
+// ==========================================================================
+
+// Кольори
+$primary-color: #0076A8;      // основний синій (посилання, заголовки новин)
+$secondary-color: #00A1E4;    // акцентний синій (hover)
+$text-color: #333;            // основний текст
+$white: #fff;
+$hero-color: rgb(46, 49, 146);
+$hero-dark: #252775;
+$teaser-bg: #f6f6f6;          // підкладка картки новини
+$label-bg: #757575;           // тег дати та лінія під зображенням
+$teaser-text: #444444;
+
+// Розміри шрифтів (1rem = 10px, бо html { font-size: 62.5% })
+$font-size-base: 1.6rem;
+$font-size-small: 1.3rem;
+$font-size-shortcut: 1.5rem;
+$font-size-shortcut-lg: 1.8rem;
+$font-size-teaser: 1.8rem;
+$font-size-heading: 2.8rem;
+$font-size-hero: 2.2rem;
+$line-height-base: 1.42857143;
+$line-height-teaser: 2.1rem;
+
+// Мапа брейкпоінтів для міксину respond-to
+$breakpoints: (
+  mobile: 576px,
+  tablet: 768px,
+  desktop: 1024px
+);
